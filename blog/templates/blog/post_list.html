@@ -6,8 +6,20 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
-            <h2><a href="">{{ post.title }}</a></h2>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}
+
+<!--
+
+url 'post_detail'
+  blog/url.pyのname=post_detailのurlを受ける
+pk=post.pk
+  Postオブジェクトの他のフィールド（title、authorなど）にアクセスするのと同じ方法で、
+  post.pkと書くことによってプライマリキーにアクセスします！
+
+https://tutorial.djangogirls.org/ja/extend_your_application/
+
+-->
