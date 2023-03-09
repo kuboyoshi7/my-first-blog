@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h2>New post</h2>
+  <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }} # ﾓﾃﾞﾙのﾌｨｰﾙﾄﾞ情報に基づいた入力フォームが作られる Djangoつぼ P155
+    <button type="submit" class="save btn btn-default">Save</button>
+  </form>
+{% endblock content %}
